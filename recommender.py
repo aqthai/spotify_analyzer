@@ -96,7 +96,7 @@ def shuffle_click(event):
         r.pack(fill='x', padx=5, pady=5)
 
 btn_shuffle = tk.Button(
-    master=frm_a,
+    master=frm_b,
     text="Shuffle",
     width=25,
     height=5,
@@ -114,7 +114,7 @@ lbl_b = tk.Label(
     width=60,
     height=20
 )
-lbl_b.pack()
+lbl_b.pack(fill=tk.BOTH, expand=True)
 
 def rec_click(event):
     '''
@@ -184,9 +184,10 @@ frm_a.pack(fill=tk.BOTH, expand=True)
 ent_playlist.pack()
 ent_playlist.insert(0, "Playlist link here")
 btn_playlist.pack(fill=tk.BOTH, expand=True)
-btn_shuffle.pack(fill=tk.BOTH, expand=True)
 frm_b.pack(fill=tk.BOTH, expand=True)
 btn_rec.pack(fill=tk.BOTH, expand=True)
+btn_shuffle.pack(fill=tk.BOTH, expand=True)
+
 
 # Instance radio buttons
 selected_song = tk.StringVar()
