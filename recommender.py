@@ -68,6 +68,7 @@ def connect_api(config, TOKEN_URL):
 
 # build GUI
 window = tk.Tk()
+window.title('Song Recommender')
 frm_a = ttk.Frame()
 frm_b = ttk.Frame()
 
@@ -176,10 +177,10 @@ def rec_click(event):
     res = requests.get('https://api.spotify.com/v1/recommendations?limit=5&market=ES&seed_artists='
     + artist + '&seed_genres=''&seed_tracks=' + song, headers=headers)
     recommendations = json.loads(json.dumps(res.json(), indent=2))
-    lbl_b['text'] = "Recommendations: "
+    lbl_b['text'] = "Recommendations: \n"
     for item in recommendations['tracks']:
         print(item['name'], item['external_urls']['spotify'])
-        lbl_b['text'] += "\n" + item['name'] + " by " + str([person['name'] for person in item['artists']])
+        lbl_b['text'] += "\n" + item['name'] + " by " + str([person['name'] for person in item['artists']]) + "\n"
 
 btn_rec = tk.Button(
     master=frm_b,
