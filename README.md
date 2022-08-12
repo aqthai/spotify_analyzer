@@ -19,3 +19,5 @@ When done, deactivate the venv with
 `deactivate`
 or
 `venv\Scripts\deactivate`
+
+![preview](preview.PNG)
